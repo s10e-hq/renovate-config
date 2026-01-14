@@ -2,7 +2,12 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:recommended",
+    "docker:enableMajor",
     "helpers:pinGitHubActionDigests",
+    "github>s10e-hq/renovate-config:autoMerge.json5",
+    "github>s10e-hq/renovate-config:labels.json5",
+    "github>s10e-hq/renovate-config:semanticCommits.json5",
+    ":automergeBranch",
     ":dependencyDashboard",
     ":disableRateLimiting"
   ],
