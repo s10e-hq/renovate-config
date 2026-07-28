@@ -1,38 +1,35 @@
 {
-  $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  packageRules: [
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "packageRules": [
     {
-      description: "Auto-merge GitHub Actions",
-      matchManagers: ["github-actions"],
-      automerge: true,
-      automergeType: "branch",
-      matchUpdateTypes: ["minor", "patch", "digest"],
-      minimumReleaseAge: "3 days",
-      ignoreTests: true,
+      "description": "Auto-merge GitHub Actions",
+      "matchManagers": ["github-actions"],
+      "automerge": true,
+      "automergeType": "pr",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "minimumReleaseAge": "3 days"
     },
     {
-      description: "Auto-merge trusted GitHub Actions",
-      matchManagers: ["github-actions"],
-      matchPackageNames: [
-        "/^actions\//",
-        "/^anchore\//",
-        "/^docker\//",
-        "/^renovatebot\//",
-        "/^sigstore\//",
+      "description": "Auto-merge trusted GitHub Actions",
+      "matchManagers": ["github-actions"],
+      "matchPackageNames": [
+        "/^actions\\//",
+        "/^anchore\\//",
+        "/^docker\\//",
+        "/^renovatebot\\//",
+        "/^sigstore\\//"
       ],
-      automerge: true,
-      automergeType: "branch",
-      matchUpdateTypes: ["minor", "patch", "digest"],
-      minimumReleaseAge: "1 minute",
-      ignoreTests: true,
+      "automerge": true,
+      "automergeType": "pr",
+      "matchUpdateTypes": ["minor", "patch", "digest"],
+      "minimumReleaseAge": "1 minute"
     },
     {
-      description: "Auto-merge Mise Tools",
-      matchManagers: ["mise"],
-      automerge: true,
-      automergeType: "branch",
-      matchUpdateTypes: ["minor", "patch"],
-      ignoreTests: true,
-    },
-  ],
+      "description": "Auto-merge Mise Tools",
+      "matchManagers": ["mise"],
+      "automerge": true,
+      "automergeType": "pr",
+      "matchUpdateTypes": ["minor", "patch"]
+    }
+  ]
 }
